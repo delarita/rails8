@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Dashboard</h1>
+      <p>Welcome to <%= Current.user.email_address%></p>
+      <p><%= button_to "log out", session_path, method: :delete %></p>
+    </div>
+  </div>
+</div>
