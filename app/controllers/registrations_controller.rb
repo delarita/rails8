@@ -11,10 +11,10 @@ class RegistrationsController < ApplicationController
     @user = User.new(sign_up_params)
 
     if @user.save
-      # start_new_session_for(@user)
-      redirect_to after_authentication_url, notice: "Welcome!"
+      start_new_session_for(@user)
+      redirect_to after_authentication_url, notice: "You have signed up successfully."
     else
-      render :new, status: :unprocessable_entity
+       render :new, status: :unprocessable_entity
     end
   end
 
