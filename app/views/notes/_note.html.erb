@@ -1,14 +1,15 @@
-<div id="<%= dom_id note %>" class="w-full sm:w-auto my-5 space-y-5">
+<div id="<%= dom_id note %>" class="w-full sm:w-auto my-5 space-y-5 bg-amber-100">
   <div>
-    <strong class="block font-medium mb-1">Title:</strong>
+    <%= note.user.email_address %>
+    <strong class="block font-medium mb-1">Title:
     <%= note.title %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Body:</strong>
+    </strong>
     <%= note.body %>
   </div>
    <div>
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= note.user.email_address %>
+    <strong class="block font-medium mb-1">Dated :</br>
+    <%= time_tag note.created_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M %P" %></br>
+    <%= time_tag note.updated_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M %P" %>
+    </strong>
   </div>
 </div>
