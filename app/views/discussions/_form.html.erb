@@ -1,0 +1,8 @@
+<%= form_with model: @discussion, local: true do |form| %>
+  <div class="mb-4">
+    <%= form.label :statut, "Statut", class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :statut, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm", placeholder: "Enter statut" %>
+    </br>
+    <%= form.submit "Create Discussion", class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500" %>
+  </div>
+<% end %>

@@ -78,6 +78,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.expect(note: [ :title, :body, :user_id ])
+      params.expect(note: [ :body, :user_id ])
     end
 end

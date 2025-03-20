@@ -1,0 +1,17 @@
+<div id="<%= dom_id discussion %>" class="w-full sm:w-auto my-5 space-y-5 bg-amber-100">
+  <div>
+    <%#= discussion.user.email_address %>
+    <strong class="block font-medium mb-1">Statut:</br>
+    <%= discussion.statut %>
+    </strong>
+    <% discussion.users.each do |user| %>
+      <p><strong>Initiée par:</strong> <%= user.email_address %></p>
+    <% end %>
+  </div>
+   <div>
+    <strong class="block font-medium mb-1">Dated :</br>
+    <%= time_tag discussion.created_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M %P" %></br>
+    <%= time_tag discussion.updated_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M %P" %>
+    </strong>
+  </div>
+</div>
