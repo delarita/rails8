@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    redirect_to root_path unless authenticated?
+    redirect_to root_path unless
+    @friends = Current.user.friends
   end
 end

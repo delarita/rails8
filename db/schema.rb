@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_19_142612) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_20_151251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -56,6 +56,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_19_142612) do
     t.datetime "updated_at", null: false
     t.index ["discussion_id"], name: "index_discutes_on_discussion_id"
     t.index ["user_id"], name: "index_discutes_on_user_id"
+  end
+
+  create_table "friendships", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notes", force: :cascade do |t|

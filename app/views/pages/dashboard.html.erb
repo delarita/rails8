@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row my-3">
     <div class="col-md-12">
       <%= render "layouts/flash" %>
       <h1>Dashboard</h1>
@@ -12,4 +12,13 @@
     </div>
   </div>
   <%#= session.inspect %>
+<hr>
+  <%= form_with url: friendships_path, method: :post, local: true do |form| %>
+    <div class="mb-4">
+      <%= form.collection_select :friend_id, User.where.not(id: Current.user.id), :id, :email_address, prompt: "Add a Friend", class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm" %>
+    </div>
+    <div>
+      <%= form.submit "Add Friend", class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500" %>
+    </div>
+  <% end %>
 </div>
